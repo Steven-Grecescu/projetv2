@@ -15,12 +15,14 @@ require_once "../Models/ArticleManager.php";
 require_once "../Controller/ArticleController.php";
 
 ?>
+<link rel="stylesheet" href="/public/style.css">
 
 <main>
+    <table>
 <tr>
             <th>Image</th>
-            <th>Titre</th>
-            <th>Article</th>
+            <th>Nom</th>
+            <th>Taille</th>
             <th>Actions</th>
         </tr>
 

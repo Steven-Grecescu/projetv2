@@ -22,8 +22,7 @@ class ArticleController{
         require_once "Views/accueil.view.php";
     }
     public function afficherArticle($id){
-        $book = $this->articleManager->getArticleById($id);
-        // echo $book->getNom();
+        $articles = $this->articleManager->getArticleById($id);
         require "Views/afficherArticle.view.php";
     }
 
