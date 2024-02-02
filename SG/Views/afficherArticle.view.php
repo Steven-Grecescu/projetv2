@@ -2,9 +2,9 @@
 <p>Afficher un article</p>
 
 <div>
-    <img src="<?= URL ?>../../../public/images/<?= $art->getImage();?>" alt="">
-    <p>Titre : <?= $art->getTitre(); ?></p>
-    <p>Nombre de pages : <?= $art->getNbPages(); ?></p>
+    <img src="<?= URL ?>../../../public/images/<?= $art->getImageArticle();?>" alt="">
+    <p>Nom : <?= $articles->getNomArticle(); ?></p>
+    <p>Desc : <?= $art->getDescriptionArticle(); ?></p>
 </div>
 
 

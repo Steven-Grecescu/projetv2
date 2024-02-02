@@ -6,7 +6,7 @@ $articleController = new ArticleController;
 
 try{
     if(empty($_GET['page'])){
-        require_once "Views/accueil.view.php";
+
     }else{
         $url = explode("/",filter_var($_GET['page']),FILTER_SANITIZE_URL);
         // echo "<pre>";
@@ -24,8 +24,7 @@ try{
                 }else if($url[1] === "a"){
                     $ArticleController->ajoutArticle();
                 }else if($url[1] === "m"){
-                    // echo $url[2];
-                    $ArticleController->modificationArticle($url[2]);
+                    $ArticleController->modificationArticle($url[2]);  
                 }else if($url[1] === "s"){
                     $ArticleController->suppressionArticle($url[2]);
                 }else if($url[1] === "av"){
@@ -35,9 +34,9 @@ try{
                 }else{
                     throw new Exception("La page n'existe pas");
                 }
-    
             break;
             default: throw new Exception("La page n'existe pas");
+
     
             }
         }

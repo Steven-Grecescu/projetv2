@@ -19,11 +19,14 @@ require_once "../Controller/ArticleController.php";
 
 <main>
     <table>
-<tr>
+        <tr>
             <th>Image</th>
             <th>Nom</th>
             <th>Taille</th>
-            <th>Actions</th>
+            <th>Description</th>
+            <th>Ref</th>
+            <th>Supprimer</th>
+            <th>Modifier</th>
         </tr>
 
         <!-- J'ai ajouté ça -->
@@ -36,20 +39,22 @@ require_once "../Controller/ArticleController.php";
     <?php for($i=0;$i<count($articles);$i++) : ?>
 
         <tr>
-            <td><img src="public/images/<?= $articles[$i]->getImageArticle(); ?>" alt=""></td>
-            <td><a href="<?= URL ?>articles/l/<?= $articles[$i]->getRefArticle();?>"><?= $articles[$i]->getNomArticle();?></a></td>
+            <td><img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>.jpg" alt="IMG"></td>
+            <td><a href="<?= URL ?>/articles/l/<?= $articles[$i]->getRefArticle();?>"><?= $articles[$i]->getNomArticle();?></a></td>
             <td><?= $articles[$i]->getTailleArticle(); ?></td>
+            <td><?= $articles[$i]->getDescriptionArticle(); ?></td>
+            <td><?= $articles[$i]->getRefArticle();?></td>
             <td>
-                <form method="POST" action="<?= URL ?>articles/s/<?=$articles[$i]->getRefArticle();?>"onSubmit="return confirm('Voulez vous vraiment supprimer le article ?');">
+                <form method="POST" action="<?= URL ?>/articles/s/<?=$articles[$i]->getRefArticle();?>"onSubmit="return confirm('Voulez vous vraiment supprimer le article ?');">
                 <button type="submit">Supprimer</button>
                 </form>
-                <td><a href="<?= URL?>articles/m/<?=$articles[$i]->getRefArticle();?>"><button>Modifier</button></a></td>
+                <td><a href="<?= URL?>/articles/m/<?=$articles[$i]->getRefArticle();?>"><button>Modifier</button></a></td>
             </td>
         </tr>
 
         <?php endfor; ?>
     </table>
-    <a href="<?= URL ?>articles/a"><button>Ajouter</button></a>
+    <a href="<?= URL ?>/articles/a"><button>Ajouter</button></a>
 </main>
 
 </body>

@@ -81,8 +81,7 @@ class ArticleController{
 
     public function modificationArticle($id){
         $articles = $this->articleManager->getArticleById($id);
-        require "Views/modifierArticle.view.php";
-
+        require "../Views/modifierArticle.view.php";
     }
 
     public function modifArticleValidation(){
