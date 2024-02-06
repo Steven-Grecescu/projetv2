@@ -2,7 +2,7 @@
 
 // require_once "C:\Users\DWWM\Desktop\Repo Orga\Magasin-Vetement-SG\Models\ArticleManager.php";
 // require_once "Models/"
-require_once "../Models/ArticleManager.php";
+require_once "Models/ArticleManager.php";
 
 class ArticleController{
     
@@ -10,7 +10,7 @@ class ArticleController{
     private $articles;
 
     public function __construct(){
-        require_once "../Models/ArticleManager.php";
+        require_once "Models/ArticleManager.php";
         $this->articleManager = new ArticleManager;
         $this->articleManager->chargementArticle();
 
@@ -19,7 +19,7 @@ class ArticleController{
     public function afficherArticles(){
         
         $articles = $this->articleManager->getArticle();
-        require_once "Views/accueil.view.php";
+        require_once "Views/crud.php";
     }
     public function afficherArticle($id){
         $articles = $this->articleManager->getArticleById($id);
@@ -27,7 +27,7 @@ class ArticleController{
     }
 
     public function ajoutArticle(){
-        require "Views/ajoutArticle.view.php";
+        require_once "Views/ajoutArticle.view.php";
     }
 
     public function ajoutArticleValidation(){
@@ -35,9 +35,8 @@ class ArticleController{
         $repertoire = "public/images/";
         $nomImageAjoute = $this->ajoutArticle($file,$repertoire);
 
-        $this->articleManager->ajoutArticleBD($_POST['nomArticle_Articles'],$_POST['description_Articles'],$_POST['taille_Articles'],$_POST['ref_Articles'],$nomImageAjoute);
-
-        header('Location: ' . URL . "articles");
+        $this->articleManager->ajoutArticleBD($_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['ref'],$nomImageAjoute);
+        header('Location: ' . URL . "crud");
     }
 
     private function ajoutImage($file, $dir){
@@ -73,19 +72,19 @@ class ArticleController{
     }
 
     public function suppressionArticle($id){
-        $nomImage = $this->articleManager->getArticleById($id)->getImage();
+        $nomImage = $this->articleManager->getArticleById($id)->getImageArticle();
         unlink("public/images/".$nomImage);
         $this->articleManager->suppressionArticleBD($id);
-        header('Location: ' .URL. "articles");
+        header('Location: ' .URL. "crud");
     }
 
     public function modificationArticle($id){
         $articles = $this->articleManager->getArticleById($id);
-        require "../Views/modifierArticle.view.php";
+        require "Views/modifierArticle.view.php";
     }
 
     public function modifArticleValidation(){
-        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant'])->getImage();
+        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant'])->getImageArticle();
         $file = $_FILES['image'];
         if($file['size']>0){
             unlink("public/images/".$imageActuelle);
@@ -95,9 +94,7 @@ class ArticleController{
             $nomImageAdd = $imageActuelle;
         }
 
-        $this->articleManager->modifArticleBD($_POST['identifiant'],$_POST['nomArticle_Articles'],$_POST['description_Articles'],$_POST['taille_Articles'],$_POST['ref_Articles'],$nomImageAdd);
-        header('Location: '. URL . "articles");
-
+        $this->articleManager->modifArticleBD($_POST['identifiant'],$_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['ref'],$nomImageAdd);
+        header('Location: '. URL . "crud");
     }
-
 }

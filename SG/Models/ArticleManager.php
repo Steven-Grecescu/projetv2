@@ -20,7 +20,7 @@ class ArticleManager extends BDConnexion{
         $req->closeCursor();
 
         foreach($mesArticles as $value){
-            $art = new Articles($value['nomArticle_Articles'],$value['description_Articles'],$value['taille_Articles'],$value['ref_Articles'],$value['image_Articles']);
+            $art = new Articles($value['idArticles_Articles'],$value['nomArticle_Articles'],$value['description_Articles'],$value['taille_Articles'],$value['ref_Articles'],$value['image_Articles']);
             $this->ajoutArticle($art);
 
         }
@@ -43,7 +43,7 @@ class ArticleManager extends BDConnexion{
         $stmt->bindValue(":nomArticle_Articles",$nom,PDO::PARAM_STR);
         $stmt->bindValue(":description_Articles",$desc,PDO::PARAM_STR);
         $stmt->bindValue(":taille_Articles",$taille,PDO::PARAM_INT);
-        $stmt->bindValue(":ref_Articles",$ref,PDO::PARAM_INT);
+        $stmt->bindValue(":ref_Articles",$ref,PDO::PARAM_STR);
         $stmt->bindValue(":image_Articles",$image,PDO::PARAM_STR);
 
         $resultat = $stmt->execute();
@@ -69,9 +69,8 @@ class ArticleManager extends BDConnexion{
     }
 
     public function modifArticleBD($id,$nom,$desc,$taille,$ref,$image){
-        $req = "UPDATE articles SET article = :nomArticle_Articles, nbPages = :description_Articles,taille = :taille_Articles,ref = ref_Articles,image = image_Articles WHERE idArticles_Articles = :idArticles_Articles";
+        $req = "UPDATE articles SET nom = :nomArticle_Articles, desc = :description_Articles,taille = :taille_Articles,ref = ref_Articles,image = image_Articles WHERE idArticles_Articles = :idArticles_Articles";
         $stmt = $this->getBDD()->prepare($req);
-        $stmt->bindValue(":idArticles_Articles",$id,PDO::PARAM_INT);
         $stmt->bindValue(":nomArticle_Articles",$nom,PDO::PARAM_STR);
         $stmt->bindValue(":description_Articles",$desc,PDO::PARAM_INT);
         $stmt->bindValue(":taille_Articles",$taille,PDO::PARAM_STR);
@@ -82,9 +81,10 @@ class ArticleManager extends BDConnexion{
         $stmt->closeCursor();
 
         if($resultat>0){
-            $this->getArticleById($id)->setNom($nom);
-            $this->getArticleById($id)->setDescription($nom);
-            $this->getArticleById($id)->setTaille($nom);
+            $this->getArticleById($id)->setNomArticle($nom);
+            $this->getArticleById($id)->setDescriptionArticle($desc);
+            $this->getArticleById($id)->setTailleArticle($taille);
+            $this->getArticleById($id)->setRefArticle($ref);
         }
     }
 

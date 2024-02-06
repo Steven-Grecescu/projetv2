@@ -2,14 +2,16 @@
 <p>Afficher un article</p>
 
 <div>
-    <img src="<?= URL ?>../../../public/images/<?= $art->getImageArticle();?>" alt="">
-    <p>Nom : <?= $articles->getNomArticle(); ?></p>
-    <p>Desc : <?= $art->getDescriptionArticle(); ?></p>
+    <h2> <?= $articles->getNomArticle() ?> </h2>
+    <img src="<?= URL ?>../../../public/images/<?= $articles->getImageArticle();?>" alt="img">
+    <p>Desccription : <?= $articles->getDescriptionArticle(); ?></p>
+    <p>Taille : <?= $articles->getTailleArticle();?></p>
+    <p>Ref : <?= $articles->getRefArticle();?></p>
+    <a href="<?= URL?>crud/l/<?= $articles->getRefArticle();?>">Lien</a>
 </div>
 
 
 <?php 
-$titre = $art->getTitre();
 $content = ob_get_clean();
 require "template.php"; 
 ?>

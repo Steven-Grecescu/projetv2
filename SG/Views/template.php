@@ -11,7 +11,7 @@
 <body>
     <header>
         <div>
-            <a href="/Views/accueil.view.php"><img srcset="/public/images/Logo_Small.jpg 384w, /public/images/Logo_Medium.jpg 768w, /public/images/Logo.jpg 1920w" sizes="(max-width:1920px) 384px,768,1920px" src="/public/images/Logo.jpg" alt="Logo"></a>
+            <a href="accueil"><img srcset="/public/images/Logo_Small.jpg 384w, /public/images/Logo_Medium.jpg 768w, /public/images/Logo.jpg 1920w" sizes="(max-width:1920px) 384px,768,1920px" src="/public/images/Logo.jpg" alt="Logo"></a>
         </div>
         <input placeholder="Search...">
         <div>
@@ -20,13 +20,13 @@
         <section class="showcase">
       <div class="menu">
         <ul>
-          <a href="/Views/accueil.view.php">Accueil</a>
+          <a href="accueil">Accueil</a>
           <a href="/Views/homme.php">Homme</a>
           <a href="/Views/femme.php">Femme</a>
           <a href="/Views/garcon.php">Garçon</a>
           <a href="/Views/fille.php">Fille</a>
           <a href="#">Panier</a>
-          <a href="/Views/crud.php">GESTION DU STOCK</a>
+          <a href="crud">GESTION DU STOCK</a>
           <button class="closeMenu">X</button>
         </ul>
       </div>
