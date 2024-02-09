@@ -30,17 +30,20 @@ require_once "./Models/ArticleManager.php";
 
         ?>
 
-<article><a href="">lien</a></article>
-<article><a href="">lien2</a></article>
-<article><a href="">lien3</a></article>
-      <?//php for ($i = 0; $i<count($articles); $i++) : ?>
-          
-  
-          <!-- <img src=" <? //=$articles[$i]->getImageArticle(). ?>" alt=""> -->
-          <?//=$articles[$i]->getNomArticle(); ?> 
-          <? //=$articles[$i]->getDescriptionArticle(); ?>
-          <? //=$articles[$i]->getTailleArticle(); ?> 
-          <? //=$articles[$i]->getRefArticle(); ?><br>
+          <div class="slideshow">
+            <div class="slide">
+              <img src="" alt="Image 1">
+              <p> Caption 1 </p>
+            </div>
+            <div class="slide">
+              <img src="" alt="Image 2">
+              <p> Caption 2 </p>
+            </div>
+            <div class="slide">
+              <img src="" alt="Image 3">
+              <p> Caption 3 </p>
+            </div>
+        </div>
 
           
       <?//php endfor; ?>
@@ -94,5 +97,5 @@ require_once "./Models/ArticleManager.php";
 
 </body>
 
-
+<script src="../script.js"></script>
 </html>

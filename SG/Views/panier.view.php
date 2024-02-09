@@ -2,9 +2,9 @@
 
 $content = ob_get_clean();
 
-require_once "../Views/template.php";
-require_once "../Models/Article.class.php";
-require_once "../Models/ArticleManager.php";
+require_once "Views/template.php";
+require_once "Models/Article.class.php";
+require_once "Models/ArticleManager.php";
 
 
 ?>

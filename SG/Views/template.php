@@ -21,11 +21,11 @@
       <div class="menu">
         <ul>
           <a href="accueil">Accueil</a>
-          <a href="/Views/homme.php">Homme</a>
-          <a href="/Views/femme.php">Femme</a>
-          <a href="/Views/garcon.php">Garçon</a>
-          <a href="/Views/fille.php">Fille</a>
-          <a href="#">Panier</a>
+          <a href="homme">Homme</a>
+          <a href="femme">Femme</a>
+          <a href="garçon">Garçon</a>
+          <a href="fille">Fille</a>
+          <a href="panier">Panier</a>
           <a href="crud">GESTION DU STOCK</a>
           <button class="closeMenu">X</button>
         </ul>

@@ -1,9 +1,9 @@
 <?php ob_start();
 
 $content = ob_get_clean();
-require_once "../Views/template.php";
-require_once "../Models/Article.class.php";
-require_once "../Models/ArticleManager.php";
+require_once "Views/template.php";
+require_once "Models/Article.class.php";
+require_once "Models/ArticleManager.php";
 
 ?>
   <link rel="stylesheet" href="../Genres/Garçon/style.css">
