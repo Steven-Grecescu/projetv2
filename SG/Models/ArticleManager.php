@@ -68,11 +68,12 @@ class ArticleManager extends BDConnexion{
         }
     }
 
-    public function modifArticleBD($id,$nom,$desc,$taille,$ref,$image){
-        $req = "UPDATE articles SET nom = :nomArticle_Articles, desc = :description_Articles,taille = :taille_Articles,ref = ref_Articles,image = image_Articles WHERE idArticles_Articles = :idArticles_Articles";
+    public function modifArticleBD($id,$nom,$descri,$taille,$ref,$image){
+        $req = "UPDATE articles SET nomArticle_Articles = :nomArticle_Articles, description_Articles = :description_Articles,taille_Articles = :taille_Articles,ref_Articles = :ref_Articles,image_Articles = :image_Articles WHERE idArticles_Articles = :idArticles_Articles";
         $stmt = $this->getBDD()->prepare($req);
+        $stmt->bindValue(":idArticles_Articles",$id,PDO::PARAM_INT);
         $stmt->bindValue(":nomArticle_Articles",$nom,PDO::PARAM_STR);
-        $stmt->bindValue(":description_Articles",$desc,PDO::PARAM_INT);
+        $stmt->bindValue(":description_Articles",$descri,PDO::PARAM_STR);
         $stmt->bindValue(":taille_Articles",$taille,PDO::PARAM_STR);
         $stmt->bindValue(":ref_Articles",$ref,PDO::PARAM_STR);
         $stmt->bindValue(":image_Articles",$image,PDO::PARAM_STR);
@@ -82,11 +83,10 @@ class ArticleManager extends BDConnexion{
 
         if($resultat>0){
             $this->getArticleById($id)->setNomArticle($nom);
-            $this->getArticleById($id)->setDescriptionArticle($desc);
+            $this->getArticleById($id)->setDescriptionArticle($descri);
             $this->getArticleById($id)->setTailleArticle($taille);
             $this->getArticleById($id)->setRefArticle($ref);
+            $this->getArticleById($id)->setImageArticle($image);
         }
     }
-
-  
 }

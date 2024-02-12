@@ -9,6 +9,11 @@
 </head>
 
 <body>
+<?php
+        $articleManager = new ArticleManager();
+        $articleManager->chargementArticle();
+        $articles = $articleManager->getArticle();
+        ?>
     <header>
         <div>
             <a href="accueil"><img srcset="/public/images/Logo_Small.jpg 384w, /public/images/Logo_Medium.jpg 768w, /public/images/Logo.jpg 1920w" sizes="(max-width:1920px) 384px,768,1920px" src="/public/images/Logo.jpg" alt="Logo"></a>

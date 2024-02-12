@@ -10,13 +10,18 @@ require_once "Models/ArticleManager.php";
     <link rel="stylesheet" href="../Genres/Homme/style.css">
     <main>
         <h2>Hommes</h2>
-        <div>
-        <article><a href="/Articles/Détaille/index.html"><img src="/Images/vetementhomme.jpg" alt="vetement homme"></a></article>
-        <article><img src="/Images/vetementhomme.jpg" alt="vetement homme"></article>
-        <article><img src="/Images/vetementhomme.jpg" alt="vetement homme"></article>
-        <article><img src="/Images/vetementhomme.jpg" alt="vetement homme"></article>
-        <article><img src="/Images/vetementhomme.jpg" alt="vetement homme"></article>
-        </div>
+        <?php for($i=0;$i<count($articles);$i++) : ?>
+
+<div>
+    <img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>.jpg" alt="IMG">
+    <a href="<?= URL ?>crud/l/<?= $articles[$i]->getIdArticle();?>"><?= $articles[$i]->getNomArticle();?></a>
+    <?= $articles[$i]->getTailleArticle(); ?>
+    <?= $articles[$i]->getDescriptionArticle(); ?>
+    <?= $articles[$i]->getRefArticle();?>
+</div>
+
+
+<?php endfor; ?>
     </main>
 </body>
 </html>
