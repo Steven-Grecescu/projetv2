@@ -38,7 +38,7 @@ require_once "Controller/ArticleController.php";
     <?php for($i=0;$i<count($articles);$i++) : ?>
 
         <tr>
-            <td><img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>.jpg" alt="IMG"></td>
+            <td><img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>" alt="<?= $articles[$i]->getImageArticle(); ?>"></td>
             <td><a href="<?= URL ?>crud/l/<?= $articles[$i]->getIdArticle();?>"><?= $articles[$i]->getNomArticle();?></a></td>
             <td><?= $articles[$i]->getTailleArticle(); ?></td>
             <td><?= $articles[$i]->getDescriptionArticle(); ?></td>

@@ -33,7 +33,7 @@ class ArticleController{
     public function ajoutArticleValidation(){
         $file =$_FILES['image'];
         $repertoire = "public/images/";
-        $nomImageAjoute = $this->ajoutArticle($file,$repertoire);
+        $nomImageAjoute = $this->ajoutImage($file,$repertoire);
 
         $this->articleManager->ajoutArticleBD($_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['ref'],$nomImageAjoute);
         header('Location: ' . URL . "crud");

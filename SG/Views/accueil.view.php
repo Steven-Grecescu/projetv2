@@ -30,7 +30,7 @@ require_once "./Models/ArticleManager.php";
 
         ?>
 
-          <div class="slideshow">
+          <!-- <div class="slideshow">
             <div class="slide">
               <img src="" alt="Image 1">
               <p> Caption 1 </p>
@@ -43,7 +43,7 @@ require_once "./Models/ArticleManager.php";
               <img src="" alt="Image 3">
               <p> Caption 3 </p>
             </div>
-        </div>
+        </div> -->
 
           
       <?//php endfor; ?>

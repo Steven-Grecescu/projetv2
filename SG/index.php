@@ -3,7 +3,7 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "h
 
 require_once "Controller/ArticleController.php";
 $ArticleController = new ArticleController;
-
+session_start();
 try{
     if(empty($_GET['page'])){
         require_once "Views/accueil.view.php";
@@ -17,10 +17,9 @@ try{
 
             break;
     
-            case "crud" : 
+            case "crud" : //&& $_SESSION['nom']==="admin" : // <-- A rajouter en enlevant les deux point devant crud
                 if(empty($url[1])){
                     $ArticleController->afficherArticles();
-
                     break;
                 }else if($url[1] === "l"){
                     $ArticleController->afficherArticle(intval($url[2]));
@@ -44,8 +43,9 @@ try{
                     throw new Exception("La page n'existe pas");
                 }
             
-            case "homme":
+            case "homme" :
                 require_once "Views/homme.php";
+
             break;
             case "femme":
                 require_once "Views/femme.php";
@@ -58,6 +58,15 @@ try{
             break;
             case "panier":
                 require_once "Views/panier.view.php";
+            break;
+            case"login":
+                require_once "Views/login.view.php";
+            break;
+            case"register":
+                require_once "Views/register.view.php";
+            break;
+            case"compte":
+                require_once "Views/compte.view.php";
             break;
            
             default: throw new Exception("La page n'existe pas");

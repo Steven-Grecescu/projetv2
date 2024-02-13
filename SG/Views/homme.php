@@ -13,8 +13,8 @@ require_once "Models/ArticleManager.php";
         <?php for($i=0;$i<count($articles);$i++) : ?>
 
 <div>
-    <img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>.jpg" alt="IMG">
-    <a href="<?= URL ?>crud/l/<?= $articles[$i]->getIdArticle();?>"><?= $articles[$i]->getNomArticle();?></a>
+    <img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>" alt="IMG">
+    <a href="<?= URL ?>homme/l/<?= $articles[$i]->getIdArticle();?>"><?= $articles[$i]->getNomArticle();?></a>
     <?= $articles[$i]->getTailleArticle(); ?>
     <?= $articles[$i]->getDescriptionArticle(); ?>
     <?= $articles[$i]->getRefArticle();?>
