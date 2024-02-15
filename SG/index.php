@@ -17,7 +17,7 @@ try{
 
             break;
     
-            case "crud" : //&& $_SESSION['nom']==="admin" : // <-- A rajouter en enlevant les deux point devant crud
+            case "crud"  : //&& $_SESSION['nom']==="admin" : // <-- A rajouter en enlevant les deux point devant crud
                 if(empty($url[1])){
                     $ArticleController->afficherArticles();
                     break;

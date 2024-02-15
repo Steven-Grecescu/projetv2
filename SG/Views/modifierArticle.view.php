@@ -8,6 +8,12 @@
     <input type="text" id="description" name="description" value="<?=$articles->getDescriptionArticle()?>"><br><br>
     <label for="taille">Taille :</label><br>
     <input type="number" id="taille" name="taille" value="<?=$articles->getTailleArticle()?>"><br><br>
+    <label for="prix">Prix :</label><br>
+    <input type="number" id="prix" name="prix" value="<?= $articles->getPrixArticle();?>"><br><br>
+    <label for="genre">Genre :</label><br>
+    <input type="text" id="genre" name="genre" value="<?= $articles->getGenreArticle();?>"><br><br>
+    <label for="type">Type :</label><br>
+    <input type="text" id="type" name="type" value="<?= $articles->getTypeArticle();?>"><br><br> 
     <label for="ref">Ref :</label><br>
     <input type="text" id="ref" name="ref" value="<?=$articles->getRefArticle()?>"><br><br>
     <h3>Image :</h3>

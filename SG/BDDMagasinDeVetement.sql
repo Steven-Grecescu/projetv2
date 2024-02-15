@@ -17,40 +17,6 @@ CREATE TABLE Clients (
     PRIMARY KEY (idClients_Clients)
 ) ENGINE = InnoDB;
 
-INSERT INTO
-    `Clients` (
-        `nom_Clients`,
-        `prenom_Clients`,
-        `email_Clients`,
-        `Adresse_Clients`,
-        `pwd_Clients`,
-        `tel_Clients`
-    )
-VALUES
-    (
-        'Jean',
-        'Dupont',
-        'jeandupont@gmail.com',
-        '5 place du general',
-        '123456',
-        '0102030405'
-    ),
-    (
-        'Michel',
-        'Gregoire',
-        'MichelG@gmail.com',
-        '59 place du general',
-        '123456',
-        '0102030405'
-    ),
-    (
-        'Christophe',
-        'Marcel',
-        'ChristopheMarc@gmail.com',
-        '54 place du general',
-        '123456',
-        '0102030405'
-    );
 
 DROP TABLE IF EXISTS Articles;
 
@@ -59,6 +25,9 @@ CREATE TABLE Articles (
     nomArticle_Articles VARCHAR(60),
     description_Articles VARCHAR(600),
     taille_Articles INT(60),
+    prix_Articles INT(60),
+    genre_Articles VARCHAR(60),
+    type_Articles VARCHAR(60),
     ref_Articles INT(60),
     image_Articles VARCHAR(60),
     Administrateur_idAdministrateur_Administrateur INT(60),
@@ -70,6 +39,9 @@ INSERT INTO
         `nomArticle_Articles`,
         `description_Articles`,
         `taille_Articles`,
+        `prix_Articles`,
+        `genre_Articles`,
+        `type_Articles`,
         `ref_Articles`,
         `image_Articles`
     )
@@ -78,6 +50,9 @@ VALUES
         'Jean Francais',
         'Un article made in 100% france',
         36,
+        10,
+        'homme',
+        'Jean',
         1,
         'Image_Jean_Français'
     ),
@@ -85,6 +60,9 @@ VALUES
         'Pantalon Hexa',
         'Un pentalon aux forme particuliere',
         38,
+        25,
+        'homme',
+        'Jean',
         2,
         'Image_Pantalon_Hexa'
     );
@@ -94,6 +72,8 @@ DROP TABLE IF EXISTS Panier;
 CREATE TABLE Panier (
     idPanier_Panier INT AUTO_INCREMENT NOT NULL,
     idClients_Panier INT(60),
+    idArticles_Panier INT(60),
+    quantiterArticles_Panier INT(60),
     commande_idcommande_commande INT(60),
     PRIMARY KEY (idPanier_Panier)
 ) ENGINE = InnoDB;

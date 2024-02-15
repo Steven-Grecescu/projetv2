@@ -32,6 +32,7 @@ if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['adresse'
  
     if ($resultat) {
         echo "Inscription réussie";
+        header('Location: '. "/login");
     }
     else {
         echo "Inscription échouée";

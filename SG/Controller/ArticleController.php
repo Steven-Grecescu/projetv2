@@ -35,7 +35,7 @@ class ArticleController{
         $repertoire = "public/images/";
         $nomImageAjoute = $this->ajoutImage($file,$repertoire);
 
-        $this->articleManager->ajoutArticleBD($_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['ref'],$nomImageAjoute);
+        $this->articleManager->ajoutArticleBD($_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['prix'],$_POST['genre'],$_POST['type'],$_POST['ref'],$nomImageAjoute);
         header('Location: ' . URL . "crud");
     }
 
@@ -94,7 +94,7 @@ class ArticleController{
             $nomImageAdd = $imageActuelle;
         }
 
-        $this->articleManager->modifArticleBD($_POST['identifiant'],$_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['ref'],$nomImageAdd);
+        $this->articleManager->modifArticleBD($_POST['identifiant'],$_POST['nom'],$_POST['description'],$_POST['taille'],$_POST['prix'],$_POST['genre'],$_POST['type'],$_POST['ref'],$nomImageAdd);
         header('Location: '. URL . "crud");
     }
 }

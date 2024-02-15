@@ -7,4 +7,6 @@ class Panier extends Articles{
         parent::__construct($nomArticle,$description,$taille,$ref,$image);
     }
 
+    
+
 }

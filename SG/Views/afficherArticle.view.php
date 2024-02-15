@@ -3,11 +3,13 @@
 
 <div>
     <h2> <?= $articles->getNomArticle() ?> </h2>
-    <img src="<?= URL ?>../../../public/images/<?= $articles->getImageArticle();?>" alt="img">
+    <img id="imgafficher" src="<?= URL ?>../../../public/images/<?= $articles->getImageArticle();?>" alt="img">
     <p>Desccription : <?= $articles->getDescriptionArticle(); ?></p>
     <p>Taille : <?= $articles->getTailleArticle();?></p>
+    <p>Prix : <?= $articles->getPrixArticle();?> €  </p>
     <p>Ref : <?= $articles->getRefArticle();?></p>
-    <a href="<?= URL?>crud/l/<?= $articles->getRefArticle();?>">Lien</a>
+    <p>ID : <?= $articles->getIdArticle();?></p>
+    <button >Ajouter au panier</button>
 </div>
 
 

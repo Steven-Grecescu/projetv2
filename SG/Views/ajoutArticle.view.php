@@ -18,6 +18,27 @@ require_once "Models/ArticleManager.php";
     <input type="text" id="description" name="description" value=""><br><br>
     <label for="taille">Taille :</label><br>
     <input type="number" id="taille" name="taille" value=""><br><br>
+    <label for="prix">Prix :</label><br>
+    <input type="number" id="prix" name="prix" value=""><br><br>
+<select id="genre" name="genre">
+    <option value="">Choisir un genre</option>
+    <option value="femme">Femme</option>
+    <option value="homme">Homme</option>
+    <option value="fille">Fille</option>
+    <option value="garçon">Garçon</option>
+</select> <br><br>
+<select id="type" name="type">
+    <option value="">Choisir un type de vetement</option>
+    <option value="jean">jean</option>
+    <option value="polo">polo</option>
+    <option value="pantalon">pantalon</option>
+    <option value="shirt">shirt</option>
+    <option value="tshirt">tshirt</option>
+    <option value="robe">robe</option>
+    <option value="vest">veste</option>
+
+
+</select> <br> <br>
     <label for="ref">Reference :</label><br>
     <input type="text" id="ref" name="ref" value=""><br><br>
     <label for="image">Image </label><br>

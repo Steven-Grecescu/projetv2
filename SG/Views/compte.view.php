@@ -1,17 +1,44 @@
 <?php ob_start();
 
 $content = ob_get_clean();
+require_once "template.php";
 ?>
 
 <html>
 <body>
 <main>
 
-<p><?= $_SESSION['nom']  ?></p>
-<p><?= $_SESSION['prenom'] ?></p>
-<p><?= $_SESSION['email'] ?></p>
-<p><?= $_SESSION['adresse'] ?></p>
-<p><?= $_SESSION['tel'] ?></p>
+<h1> Vos Informations Personelles</h1>
+
+<ul>
+    <li>
+        <label for="">Nom : </label>
+       <?= $_SESSION['nom']  ?>
+    </li>
+
+    <li>
+        <label for="">Prenom : </label>
+        <?= $_SESSION['prenom']?>
+    </li>
+
+    <li>
+        <label for="">Email : </label>
+        <?= $_SESSION['email']?>
+    </li>
+
+    <li>
+        <label for="">Adresse : </label>
+        <?= $_SESSION['adresse']?>
+    </li>
+
+    <li>
+        <label for="">Telephone : </label>
+        <?= $_SESSION['tel']?>
+    </li>
+
+</ul>
+
+
 
 
 

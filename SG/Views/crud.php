@@ -22,6 +22,9 @@ require_once "Controller/ArticleController.php";
             <th>Image</th>
             <th>Nom</th>
             <th>Taille</th>
+            <th>Prix</th>
+            <th>Genre</th>
+            <th>Type</th>
             <th>Description</th>
             <th>Ref</th>
             <th>Supprimer</th>
@@ -41,14 +44,15 @@ require_once "Controller/ArticleController.php";
             <td><img src="../public/images/<?= $articles[$i]->getImageArticle(); ?>" alt="<?= $articles[$i]->getImageArticle(); ?>"></td>
             <td><a href="<?= URL ?>crud/l/<?= $articles[$i]->getIdArticle();?>"><?= $articles[$i]->getNomArticle();?></a></td>
             <td><?= $articles[$i]->getTailleArticle(); ?></td>
+            <td><?= $articles[$i]->getPrixArticle();?></td>
+            <td><?= $articles[$i]->getGenreArticle();?></td>
+            <td><?= $articles[$i]->getTypeArticle();?></td>
             <td><?= $articles[$i]->getDescriptionArticle(); ?></td>
             <td><?= $articles[$i]->getRefArticle();?></td>
-            <td>
                 <form method="POST" action="<?= URL ?>crud/s/<?=$articles[$i]->getIdArticle();?>"onSubmit="return confirm('Voulez vous vraiment supprimer l'article ?');">
-                <button type="submit">Supprimer</button>
+                <td><button type="submit">Supprimer</button></td>
                 </form>
                 <td><a href="<?= URL?>crud/m/<?=$articles[$i]->getIdArticle();?>"><button>Modifier</button></a></td>
-            </td>
         </tr>
 
         <?php endfor; ?>

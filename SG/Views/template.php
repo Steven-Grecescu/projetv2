@@ -17,22 +17,22 @@
         ?>
     <header>
         <div>
-            <a href="accueil"><img srcset="/public/images/Logo_Small.jpg 384w, /public/images/Logo_Medium.jpg 768w, /public/images/Logo.jpg 1920w" sizes="(max-width:1920px) 384px,768,1920px" src="/public/images/Logo.jpg" alt="Logo"></a>
+            <a href="/accueil"><img srcset="/public/images/Logo_Small.jpg 384w, /public/images/Logo_Medium.jpg 768w, /public/images/Logo.jpg 1920w" sizes="(max-width:1920px) 384px,768,1920px" src="/public/images/Logo.jpg" alt="Logo"></a>
         </div>
         <input placeholder="Effectuer une recherche...">
         <div>
-            <a href="/Views/panier.view.php"><img src="/public/images/panier.png" alt=""></a>
+            <a href="panier"><img src="/public/images/panier.png" alt=""></a>
         </div>
         <section class="showcase">
       <div class="menu">
         <ul>
-          <a href="compte">Compte de <?= $_SESSION['nom'] ?></a>
-          <a href="accueil">Accueil</a>
-          <a href="homme">Homme</a>
-          <a href="femme">Femme</a>
-          <a href="garçon">Garçon</a>
-          <a href="fille">Fille</a>
-          <a href="panier">Panier</a>
+          <a href="/compte">Compte de <?= $_SESSION['nom'] ?></a>
+          <a href="/accueil">Accueil</a>
+          <a href="/homme">Homme</a>
+          <a href="/femme">Femme</a>
+          <a href="/garçon">Garçon</a>
+          <a href="/fille">Fille</a>
+          <a href="/panier">Panier</a>
           <?php if($_SESSION['nom']=="admin"){
 
            ?>
